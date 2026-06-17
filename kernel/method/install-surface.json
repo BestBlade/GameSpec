@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "1.0.0",
+  "surfaceId": "gamespec-core-install-surface",
+  "surfaceVersion": "0.3.0-alpha",
+  "releaseChannel": "beta",
+  "description": "Machine-readable contract for the GameSpec kernel/runtime surface installed into a game project.",
+  "installedAs": "gamespec/install-surface.json",
+  "installTargets": {
+    "kernel": "gamespec/",
+    "runtime": {
+      "claude": ".claude/",
+      "agents": ".agents/",
+      "codex": ".codex/"
+    },
+    "protectedProjectTruth": "gamespec/projects/"
+  },
+  "surfaceGroups": {
+    "kernel": [
+      "config",
+      "method",
+      "protocols",
+      "roles",
+      "skills",
+      "templates",
+      "workflows"
+    ],
+    "runtime": [
+      "claude",
+      "agents",
+      "codex"
+    ]
+  },
+  "defaultProfile": "stable-core",
+  "installProfiles": {
+    "stable-core": {
+      "status": "current",
+      "description": "Default minimal stable kernel profile for projects that want only the durable contract.",
+      "kernelGroups": [
+        "config",
+        "method"
+      ],
+      "runtimeHosts": []
+    },
+    "kernel-beta": {
+      "status": "current",
+      "description": "Explicit opt-in full beta GameSpec kernel method surface without runtime host adapters.",
+      "kernelGroups": [
+        "config",
+        "method",
+        "protocols",
+        "roles",
+        "skills",
+        "templates",
+        "workflows"
+      ],
+      "runtimeHosts": []
+    },
+    "full-beta": {
+      "status": "current",
+      "description": "Explicit opt-in full beta GameSpec method surface with runtime entrypoint packs selected per target project.",
+      "kernelGroups": [
+        "config",
+        "method",
+        "protocols",
+        "roles",
+        "skills",
+        "templates",
+        "workflows"
+      ],
+      "runtimeHosts": [
+        "claude",
+        "agents",
+        "codex"
+      ],
+      "runtimeHostSelectionDefault": "auto"
+    }
+  },
+  "groupStability": {
+    "kernel": {
+      "config": "stable",
+      "method": "stable",
+      "protocols": "beta",
+      "roles": "beta",
+      "skills": "beta",
+      "templates": "beta",
+      "workflows": "beta"
+    },
+    "runtime": {
+      "claude": "beta",
+      "agents": "beta",
+      "codex": "beta"
+    }
+  },
+  "versionSignalRoles": {
+    "installSurfaceVersion": "Version of the installed GameSpec kernel/runtime contract.",
+    "packageVersion": "Distribution artifact version.",
+    "kernelConfigVersion": "Legacy project configuration template version used by kernel/config.yaml.",
+    "runtimeSkillSystem": "Runtime adapter compatibility label used in host skill metadata."
+  },
+  "compatibility": {
+    "projectTruthWrites": "forbidden_by_installer",
+    "installWrites": "explicit_plan_execution_only",
+    "syncWrites": "explicit_approval_and_hash_guarded",
+    "supportedRuntimeHosts": [
+      "claude",
+      "agents",
+      "codex"
+    ]
+  }
+}
