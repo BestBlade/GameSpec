@@ -22,6 +22,7 @@ Self-governance records live under `.meta/changes/`. They are intentionally igno
 Run these before publishing source changes:
 
 ```powershell
+node .\bin\gamespec-check.js --project . --format json
 node .\bin\gamespec-audit-package-readiness.js --format json
 node .\bin\gamespec-audit-cli-smoke.js --format json
 node .\bin\gamespec-audit-core-install-surface.js --format json

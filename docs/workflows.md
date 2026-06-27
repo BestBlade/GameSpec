@@ -30,6 +30,19 @@ A Candidate should name:
 - proof signal
 - decision owner
 
+## Optional Capability Lane
+
+Use the capability lane only when a Candidate has a real direction fork, evidence risk, high-impact direction choice, or low-ceiling risk. It is not part of routine Spark or Thread capture.
+
+Optional records:
+
+- `direction-map.md` records promoted, parked, and rejected directions.
+- `evidence-contract.md` binds important claims to proof, falsifiers, source labels, and coverage limits.
+- `findings.md` may record selection findings when a selection or debate pass happens.
+- `## Mainline Decision` belongs inside `proposal.md` or `archive.md` when the default path matters.
+
+Parked means intentionally preserved for later reconsideration. It is not the same as failed.
+
 ## Canonization
 
 Canonization requires a human-owned decision and enough evidence for future work to trust the result.
@@ -41,6 +54,12 @@ At minimum, canon should carry:
 - dependencies and affected surfaces
 - implementation readiness when relevant
 - archive or status update
+
+## Docs Change Structure Check
+
+Docs-backed changes can use `gamespec-check` to audit proposal, apply, verify, and archive structure. This is a support command, not a design decision maker.
+
+The checker can report useful structure warnings even when a docs project has no change records yet. When a project uses OpenSpec, OpenSpec remains the owner of its own change schema and lifecycle.
 
 ## Admission Review
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "surfaceId": "gamespec-core-install-surface",
-  "surfaceVersion": "0.3.0-alpha",
+  "surfaceVersion": "0.4.0-alpha",
   "releaseChannel": "beta",
   "description": "Machine-readable contract for the GameSpec kernel/runtime surface installed into a game project.",
   "installedAs": "gamespec/install-surface.json",

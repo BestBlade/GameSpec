@@ -1,6 +1,6 @@
 {
   "name": "gamespec",
-  "version": "0.3.0-alpha.0",
+  "version": "0.4.0-alpha.0",
   "description": "Memory and decision layer for AI-assisted game creation.",
   "type": "module",
   "license": "MIT",
@@ -29,6 +29,7 @@
     "runtime/"
   ],
   "bin": {
+    "gamespec-check": "./bin/gamespec-check.js",
     "gamespec-classify": "./bin/gamespec-classify.js",
     "gamespec-plan-extraction": "./bin/gamespec-plan-extraction.js",
     "gamespec-build-copy-manifest": "./bin/gamespec-build-copy-manifest.js",
@@ -69,6 +70,7 @@
     "gamespec-filter-by-surface-audit": "./bin/gamespec-filter-by-surface-audit.js"
   },
   "scripts": {
+    "check": "node ./bin/gamespec-check.js",
     "classify": "node ./bin/gamespec-classify.js",
     "plan:extraction": "node ./bin/gamespec-plan-extraction.js",
     "manifest:copy": "node ./bin/gamespec-build-copy-manifest.js",

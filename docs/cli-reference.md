@@ -4,6 +4,12 @@ GameSpec currently exposes granular commands. Most commands are planners, audits
 
 Planner commands are read-only. Executors are dry-run by default unless documented otherwise.
 
+## Structure Checks
+
+| Command | Purpose |
+| --- | --- |
+| `gamespec-check` | Check docs-mode change structure and optional capability-lane records. It validates structure, not design truth. |
+
 ## Installation
 
 | Command | Purpose |

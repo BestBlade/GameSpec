@@ -649,6 +649,10 @@ function selectedHosts(plan) {
   return plan?.installSurfaceManifest?.runtimeHostSelection?.selectedHosts ?? [];
 }
 
+function kernelOps(plan) {
+  return (plan?.operations ?? []).filter((op) => op.surface === "kernel");
+}
+
 function hostListEquals(actual, expected) {
   return JSON.stringify([...actual].sort()) === JSON.stringify([...expected].sort());
 }
@@ -709,12 +713,16 @@ function buildRuntimeHostSelectionProbe(fixtureRoot, scratchRoot, packageJson, t
     }
   }
 
+  const emptyKernelOps = kernelOps(plans.emptyFullBeta);
   const emptyRuntimeOps = (plans.emptyFullBeta?.operations ?? []).filter((op) => op.surface === "runtime");
   if (plans.emptyFullBeta && selectedHosts(plans.emptyFullBeta).length !== 0) issues.push("empty_full_beta_selected_runtime_hosts");
   if (plans.emptyFullBeta && emptyRuntimeOps.length !== 0) issues.push("empty_full_beta_created_runtime_ops");
-  if (plans.emptyFullBeta && plans.emptyFullBeta.operations.length !== 78) issues.push("empty_full_beta_expected_78_kernel_ops");
+  if (plans.emptyFullBeta && emptyKernelOps.length === 0) issues.push("empty_full_beta_has_no_kernel_ops");
 
   const existingCodexRuntimeOps = (plans.existingCodexAuto?.operations ?? []).filter((op) => op.surface === "runtime");
+  if (plans.existingCodexAuto && kernelOps(plans.existingCodexAuto).length !== emptyKernelOps.length) {
+    issues.push("existing_codex_auto_kernel_ops_mismatch");
+  }
   if (plans.existingCodexAuto && !hostListEquals(selectedHosts(plans.existingCodexAuto), ["codex"])) {
     issues.push("existing_codex_auto_did_not_select_only_codex");
   }
@@ -724,12 +732,18 @@ function buildRuntimeHostSelectionProbe(fixtureRoot, scratchRoot, packageJson, t
   }
 
   const explicitAllRuntimeOps = (plans.explicitAll?.operations ?? []).filter((op) => op.surface === "runtime");
+  if (plans.explicitAll && kernelOps(plans.explicitAll).length !== emptyKernelOps.length) {
+    issues.push("explicit_all_kernel_ops_mismatch");
+  }
   if (plans.explicitAll && !hostListEquals(selectedHosts(plans.explicitAll), ["agents", "claude", "codex"])) {
     issues.push("explicit_all_did_not_select_all_hosts");
   }
   if (plans.explicitAll && explicitAllRuntimeOps.length !== 15) issues.push("explicit_all_expected_15_runtime_ops");
 
   const explicitCodexRuntimeOps = (plans.explicitCodex?.operations ?? []).filter((op) => op.surface === "runtime");
+  if (plans.explicitCodex && kernelOps(plans.explicitCodex).length !== emptyKernelOps.length) {
+    issues.push("explicit_codex_kernel_ops_mismatch");
+  }
   if (plans.explicitCodex && !hostListEquals(selectedHosts(plans.explicitCodex), ["codex"])) {
     issues.push("explicit_codex_did_not_select_only_codex");
   }

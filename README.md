@@ -59,6 +59,20 @@ Install the stable core contract, inspect current project state, then decide wha
 
 GameSpec should not let implementation reinterpret game truth. A design should become an implementation handoff only after intent, dependencies, review state, and acceptance criteria are clear enough for downstream work.
 
+### Check Change Structure
+
+Docs-backed change records can be checked without requiring OpenSpec:
+
+```powershell
+.\node_modules\.bin\gamespec-check.cmd <change-id-or-path> --project <project-root> --phase proposal --format markdown
+```
+
+The checker validates structure only. It does not prove semantic correctness, independent review, implementation readiness, or canon acceptance.
+
+### Use The Capability Lane Only When Needed
+
+High-uncertainty work can add optional records such as a direction map, evidence contract, selection findings, and a conditional Mainline Decision section. These records are for meaningful forks, evidence risk, or high-impact direction choices. Routine creative capture should stay light.
+
 ## Install Profiles
 
 The default install profile is intentionally small:
