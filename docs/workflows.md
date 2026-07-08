@@ -17,6 +17,42 @@ Good captured material includes:
 
 Nothing in capture becomes canon automatically.
 
+## Spark Divergence
+
+Use Spark Divergence when the problem is not "is this ready?" but "one agent or
+one pass is not producing enough variety."
+
+Typical triggers:
+
+- generated ideas feel like the same core in different skins;
+- the user asks for stronger, stranger, broader, or more multi-perspective ideas;
+- a project needs multiple incompatible directions before choosing a Thread;
+- reference works need to become reusable design principles, not surface flavor;
+- the first pass lacks a concrete player action layer.
+
+Recommended modes:
+
+- `solo-diverge`: one agent runs multiple deliberate passes with different
+  assumptions.
+- `role-lens`: one agent uses named GameSpec roles as perspective lenses.
+- `cross-agent-diverge`: two or more agents generate or critique sparks, when
+  the host environment supports it.
+- `sameness-check`: compare options and mark which share the same underlying
+  world engine, relationship structure, or gameplay verb.
+- `remix`: recombine strong fragments after sameness checks without forcing a
+  single mainline.
+
+A Spark Divergence record should preserve:
+
+- the source prompt or question;
+- which agent or role lens produced each option;
+- the sameness check;
+- promoted fragments, parked fragments, and rejected duplicates;
+- a truth boundary stating that the material remains Spark or Thread only.
+
+Do not use Spark Divergence as a gate. It does not prove quality, independent
+validation, canon acceptance, or implementation readiness.
+
 ## Candidate Review
 
 Promote material to Candidate when it could affect project truth, implementation cost, dependencies, or producer commitment.

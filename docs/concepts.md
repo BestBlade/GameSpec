@@ -17,6 +17,21 @@ Spark -> Thread -> Candidate -> Canon
 
 This is not a quality ladder. A failed Thread can be valuable. A Spark can stay a Spark forever. A Candidate can be rejected without being deleted.
 
+### Spark Divergence
+
+Spark is the right place to use multiple agents or multiple role lenses for idea
+generation. The purpose is divergence, not validation:
+
+- generate structurally different directions;
+- detect "same core in different skins";
+- challenge hidden assumptions in the prompt;
+- remix strong fragments without choosing a winner too early;
+- park promising but unselected material for later reconsideration.
+
+Spark Divergence records are not canon, not review evidence, and not proof that
+an idea is good. They are traceable creative work that can later feed a Thread
+or Candidate when the user decides the direction deserves commitment.
+
 ## Project Truth
 
 Project truth is the set of facts future work may trust: vision, pillars, systems, narrative, worldbuilding, levels, reviews, active state, decisions, archives, and implementation handoffs.

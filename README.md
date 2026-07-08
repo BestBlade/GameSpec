@@ -32,6 +32,10 @@ Spark -> Thread -> Candidate -> Canon
 | Candidate | A design direction that may affect project truth, implementation cost, or downstream dependencies. |
 | Canon | Accepted project truth with explicit review, decision, and evidence. |
 
+Sparks may use multi-agent divergence to widen the idea pool before commitment.
+That is not review evidence and does not make the strongest spark canon; it is a
+way to generate, compare, remix, and park options while they are still cheap.
+
 GameSpec also separates reusable method from project-owned truth:
 
 | Layer | Owned By | Purpose |
@@ -48,6 +52,11 @@ The project owns canon. GameSpec installs method and entrypoints, but it must no
 ### Start With A New Idea
 
 Use creative capture first. Keep raw material cheap until the idea is ready for a real commitment gate.
+
+When a single agent is not producing enough variety, use Spark Divergence:
+separate agents or role lenses generate options, run sameness checks, challenge
+the frame, and remix promising fragments. Keep the result in Sparks or Threads
+until a human explicitly promotes a direction.
 
 Admission Review is the heavier step: it asks whether a game direction deserves project-level commitment. It is meant for new project admission, major pivots, or serious re-greenlight checks.
 
