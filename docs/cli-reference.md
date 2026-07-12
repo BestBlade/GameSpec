@@ -47,6 +47,14 @@ Planner commands are read-only. Executors are dry-run by default unless document
 | `gamespec-plan-workflow-state-update` | Plan an active-state transition after review evidence. |
 | `gamespec-execute-workflow-state-update-plan` | Apply the planned active-state transition with guards. |
 
+## Cross-Agent Spark Divergence
+
+| Command | Purpose |
+| --- | --- |
+| `gamespec-hooks` | Configure project opt-in and install, inspect, or remove host lifecycle dispatchers. |
+| `gamespec-cross-agent` | Run direct or file-coupled opposite-peer divergence and verify the latest primary selection. |
+| `gamespec-audit-cross-agent-hooks` | Prove hook merge safety, activation boundaries, trace artifacts, and selection gating in isolation. |
+
 ## Product And Surface Audits
 
 | Command | Purpose |

@@ -43,6 +43,9 @@ investigating design problems, and clarifying requirements before formal design.
 5. Patient: let the shape of the design emerge.
 6. Divergent before convergent: do not collapse Sparks into a single mainline
    before there is enough contrast.
+7. Traceable cross-agent use: when a project hook creates a request, execute its
+   `run-request` command to invoke Codex, complete every `selection.md` row, and
+   run `check-request`. A Claude second pass is not cross-agent evidence.
 
 ## Context Files
 

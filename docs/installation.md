@@ -61,6 +61,46 @@ Install all supported runtime entrypoints deliberately:
 .\node_modules\.bin\gamespec-plan-install.cmd --project <project-root> --surface runtime --profile full-beta --runtime-host all --format markdown
 ```
 
+## Optional Cross-Agent Hooks
+
+Host hooks are installed globally as silent dispatchers, but they do nothing
+unless the current repository has explicitly opted in. Configure the project
+first, using `ask` as the recommended single-user default:
+
+```powershell
+.\node_modules\.bin\gamespec-hooks.cmd configure --project-root <project-root> --mode ask
+.\node_modules\.bin\gamespec-hooks.cmd install --target both
+```
+
+If the local auxiliary host is authenticated through environment variables,
+name only the required variables explicitly. GameSpec never forwards secrets by
+default:
+
+```powershell
+.\node_modules\.bin\gamespec-hooks.cmd configure --project-root <project-root> --mode ask --pass-env ANTHROPIC_AUTH_TOKEN,ANTHROPIC_BASE_URL
+```
+
+`ask` makes an eligible GameSpec Explore turn ask whether to work solo, through
+role lenses, or through cross-agent divergence. `auto` creates a file-coupled
+request only for an explicit Spark Divergence or multi-agent creative request.
+The primary agent follows the injected `run-request` command in the same task:
+Codex routes to Claude, and Claude routes to Codex. Hooks stay below 30 seconds
+and never launch a long model process. Ordinary conversations and ordinary
+explore turns remain silent.
+
+Cross-agent artifacts are local runtime evidence under
+`gamespec/.runtime/cross-agent/`. The auxiliary agent cannot read the repository
+or write project truth; Claude packet-only invocation also disables `Task` so it
+cannot delegate around the tool boundary. The primary agent must complete `selection.md` before
+the run is complete. Promotion into `gamespec/projects/` remains an explicit user
+decision.
+
+Codex user-level hooks must be trusted in Codex Settings after installation.
+Stop on either host writes durable pending state and returns a continuation block until
+`check-request` succeeds; the block asks Codex to keep working rather than
+rejecting the user's turn. Evidence-check exceptions fail closed with the same
+continuation behavior.
+
 ## Safety
 
 Install planning is read-only. Execution is dry-run by default. Existing differing product-managed files block broad install and should be reviewed through install drift and sync commands.

@@ -58,6 +58,22 @@ separate agents or role lenses generate options, run sameness checks, challenge
 the frame, and remix promising fragments. Keep the result in Sparks or Threads
 until a human explicitly promotes a direction.
 
+Optional project-scoped host hooks can automate this divergence without making
+every conversation multi-agent. Install the global dispatcher once, then opt in
+per project with `ask` (recommended) or `auto`:
+
+```powershell
+gamespec-hooks configure --project-root <project-root> --mode ask
+gamespec-hooks install --target both
+```
+
+The dispatcher routes Codex to Claude and Claude to Codex. It writes a
+session-scoped request and injects `run-request` / `check-request`; the primary
+agent executes the peer CLI in the same task. Hooks never run a long model
+process. The auxiliary output and the primary agent's selection record stay under
+`gamespec/.runtime/cross-agent/`. They are traceable but non-canon; the user must
+explicitly promote any surviving fragment into a project Spark.
+
 Admission Review is the heavier step: it asks whether a game direction deserves project-level commitment. It is meant for new project admission, major pivots, or serious re-greenlight checks.
 
 ### Adopt An Existing Project

@@ -33,6 +33,10 @@ Use this entrypoint when the user wants to explore a game idea, investigate a de
   fragments without forcing a mainline.
 - If another agent, model, or role lens contributed, preserve a short trace of
   who produced which option and what was remixed, parked, or rejected.
+- When project-scoped hooks inject a cross-agent request, run its `run-request`
+  command to invoke Claude, complete every row in `selection.md`, and run
+  `check-request` before claiming completion. Never substitute a Codex second
+  pass or promote runtime output into project truth automatically.
 - If the user asks to continue into implementation, define proof signals before writing files.
 - Treat evidence, review, and archive as project-visible artifacts, not hidden chat memory.
 
