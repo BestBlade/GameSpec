@@ -180,7 +180,7 @@ function main() {
   const runDir = path.join(runsRoot, runDirs[0]);
   const run = readJson(path.join(runDir, "run.json"));
   assert(run.reviewerStatus === "success" && run.outputStructured === true, "fake reviewer output was not accepted");
-  assert(run.runner === "gamespec-cross-agent/v2" && run.primaryHost === "codex" && run.reviewer === "claude" && run.sameFamily === false && run.evidenceHashes?.raw, "Codex -> Claude provenance is incomplete");
+  assert(run.runner === "gamespec-cross-agent/v3" && run.action === "diverge" && run.primaryHost === "codex" && run.reviewer === "claude" && run.sameFamily === false && run.evidenceHashes?.raw && run.contextFingerprint && Array.isArray(run.contextManifest), "Codex -> Claude provenance is incomplete");
   assert(run.contextFiles.includes("gamespec/AGENTS.md"), "packet context trace missing");
   result = hook(project, env, "Stop", { session_id: "codex-primary", stop_hook_active: false }, "codex");
   assert(result.stdout.includes('"decision":"block"') && readJson(codexRequest).pendingStatus === "selection-required", "Codex incomplete selection must remain a durable continuation state");

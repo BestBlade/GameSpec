@@ -47,13 +47,29 @@ Planner commands are read-only. Executors are dry-run by default unless document
 | `gamespec-plan-workflow-state-update` | Plan an active-state transition after review evidence. |
 | `gamespec-execute-workflow-state-update-plan` | Apply the planned active-state transition with guards. |
 
-## Cross-Agent Spark Divergence
+## Creative Runtime
 
 | Command | Purpose |
 | --- | --- |
 | `gamespec-hooks` | Configure project opt-in and install, inspect, or remove host lifecycle dispatchers. |
-| `gamespec-cross-agent` | Run direct or file-coupled opposite-peer divergence and verify the latest primary selection. |
+| `gamespec-cross-agent` | Run a direct or file-coupled opposite-peer creative action, with explicit context and exact-run selection checks. |
+| `gamespec-creative-studio` | Start, run, advance, curate, park, reopen, recover, inspect, or verify a bounded Explore E2 session. |
 | `gamespec-audit-cross-agent-hooks` | Prove hook merge safety, activation boundaries, trace artifacts, and selection gating in isolation. |
+| `gamespec-audit-creative-studio` | Prove unique direction coverage, task/context boundaries, staleness, recovery, finite curation, and no project-truth writes in isolated fixtures. |
+
+`gamespec-cross-agent run` supports `--action diverge|counterframe|deepen|cross-pollinate|contrast`, repeated project-bounded `--context-file` and `--role-lens` values, and an optional `--desired-contrast`. Packet-only tasks that require repository writes or unavailable repository reads fail before peer invocation.
+
+Creative Studio commands:
+
+| Subcommand | Purpose |
+| --- | --- |
+| `start` | Create a non-canon session with a stable prompt, context fingerprint, first action, and finite round budget. |
+| `run` | Invoke exactly one action and stop for primary selection. |
+| `advance` | Bind a completed exact run, then `continue`, `curate`, `park`, or `abandon` with a reason; after max-round exhaustion, resolve existing rounds without creating another. |
+| `reopen` | Reopen an eligible stopped session with a reason and next action; refresh stale context lineage explicitly. |
+| `recover-previous` | Restore the previously published state with a recovery record. |
+| `status` | Report state, context currency, active run, curation, and next owner. |
+| `check` | Revalidate context, exact run identities, selections, and curation hashes. |
 
 ## Product And Surface Audits
 

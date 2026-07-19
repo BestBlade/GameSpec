@@ -53,6 +53,39 @@ A Spark Divergence record should preserve:
 Do not use Spark Divergence as a gate. It does not prove quality, independent
 validation, canon acceptance, or implementation readiness.
 
+## Creative Studio
+
+Use Creative Studio when one-shot divergence found useful material but the
+question needs several purposeful creative operations and must remain resumable.
+Do not use it merely because a task is long.
+
+Recommended role/action mapping:
+
+| Creative role | Actions | Purpose |
+| --- | --- | --- |
+| Expander | `diverge` | Produce structurally different cores. |
+| Frame Breaker | `counterframe`, `contrast` | Challenge hidden premises and force meaningful contrast. |
+| Deepener | `deepen`, `cross-pollinate` | Add playable consequences or exchange traceable fragments. |
+| Curator | primary selection plus `curate` / `park` | Preserve choices, fragments, risks, and reopen triggers for a human. |
+
+A session starts with explicit project-bounded context and a finite budget of
+one to six rounds (three by default). Each `run` creates an exact cross-agent
+run. The primary agent must complete every `selection.md` row before `advance`
+can bind that round. `continue` requires a named next action and reason;
+`curate`, `park`, and `abandon` stop the loop. Reaching the budget returns
+`needs-user`; it can then resolve the completed rounds to `curate`, `park`, or
+`abandon` without inventing another round. Continuing requires a new session
+with an explicit budget.
+
+Selected context is hash-bound. If it changes, `run` stops as `stale`; a
+reason-bound `reopen` starts a new context lineage while retaining the old one.
+`recover-previous` restores only a previously published state and records why.
+
+The Studio writes under `gamespec/.runtime/creative-studio/` and
+`gamespec/.runtime/cross-agent/`, never `gamespec/projects/`. Its final
+`curation.md` may say ready for human curation, but it is not Candidate Review,
+Admission Review, canon acceptance, or proof of creative quality.
+
 ## Candidate Review
 
 Promote material to Candidate when it could affect project truth, implementation cost, dependencies, or producer commitment.

@@ -43,6 +43,12 @@ hooks 只负责写入 session-scoped request、注入命令和检查结果，30 
 - `run.json`：范围、模型、输入哈希、环境键名、上下文来源、验证状态和 runner
   对 packet、prompt、raw 的证据哈希。
 
+直接运行也可以声明 `diverge`、`counterframe`、`deepen`、
+`cross-pollinate` 或 `contrast` 动作，并通过重复的 `--context-file` 显式提供
+项目内上下文。显式上下文必须记录完整文件哈希、字节数、纳入字节数和裁剪状态；
+重复 stdout 中相同 direction ID 只计一次。`complete` 是规范选择状态，旧版
+`completed` 仅作为兼容输入归一化，不能放宽方向覆盖检查。
+
 辅助输出成功不等于运行完成。主代理必须在 `selection.md` 中覆盖辅助输出的
 每一个方向，保留 sameness 判断和来源轨迹，之后才能声称本次发散完成。
 

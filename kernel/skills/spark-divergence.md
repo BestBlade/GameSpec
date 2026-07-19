@@ -56,6 +56,11 @@ Do not use it as:
 - implementation readiness evidence;
 - proof of independent validation.
 
+For one-shot Explore E1 work, stop after the record is selected. Escalate to
+the `creative-studio` skill only when another named creative action will add
+meaningful contrast, depth, or recoverability. Explore E0/E1/E2 are density
+labels and do not replace GameSpec's L0/L1/L2/L3 role permissions.
+
 ## Procedure
 
 1. State the truth boundary. The output remains Spark or Thread material unless

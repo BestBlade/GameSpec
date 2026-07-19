@@ -1,6 +1,6 @@
 {
   "name": "gamespec",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Memory and decision layer for AI-assisted game creation.",
   "type": "module",
   "license": "MIT",
@@ -69,8 +69,10 @@
     "gamespec-audit-held-surfaces": "./bin/gamespec-audit-held-surfaces.js",
     "gamespec-filter-by-surface-audit": "./bin/gamespec-filter-by-surface-audit.js",
     "gamespec-cross-agent": "./bin/gamespec-cross-agent.js",
+    "gamespec-creative-studio": "./bin/gamespec-creative-studio.js",
     "gamespec-hooks": "./bin/gamespec-hooks.js",
-    "gamespec-audit-cross-agent-hooks": "./bin/gamespec-audit-cross-agent-hooks.js"
+    "gamespec-audit-cross-agent-hooks": "./bin/gamespec-audit-cross-agent-hooks.js",
+    "gamespec-audit-creative-studio": "./bin/gamespec-audit-creative-studio.js"
   },
   "scripts": {
     "check": "node ./bin/gamespec-check.js",
@@ -113,7 +115,9 @@
     "surface:audit-held": "node ./bin/gamespec-audit-held-surfaces.js",
     "surface:filter": "node ./bin/gamespec-filter-by-surface-audit.js",
     "cross-agent": "node ./bin/gamespec-cross-agent.js",
+    "creative:studio": "node ./bin/gamespec-creative-studio.js",
     "hooks": "node ./bin/gamespec-hooks.js",
-    "cross-agent:audit-hooks": "node ./bin/gamespec-audit-cross-agent-hooks.js"
+    "cross-agent:audit-hooks": "node ./bin/gamespec-audit-cross-agent-hooks.js",
+    "creative:audit-studio": "node ./bin/gamespec-audit-creative-studio.js"
   }
 }

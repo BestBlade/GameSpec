@@ -88,6 +88,19 @@ Codex routes to Claude, and Claude routes to Codex. Hooks stay below 30 seconds
 and never launch a long model process. Ordinary conversations and ordinary
 explore turns remain silent.
 
+Hooks cover Explore E1 one-shot requests. They do not silently promote an
+ordinary Explore turn into a multi-round Explore E2 session. Start Creative
+Studio explicitly when the user or primary agent has a concrete reason to
+preserve attention across several bounded creative actions:
+
+```powershell
+.\node_modules\.bin\gamespec-creative-studio.cmd start --project-root <project-root> --project-id <id> --prompt "<creative question>" --context-file <project-relative-file> --action diverge --max-rounds 3 --json
+```
+
+The session is stored locally under `gamespec/.runtime/creative-studio/` and
+uses the configured cross-agent peer for each round. Changing selected context
+stops the session until a reason-bound reopen.
+
 Cross-agent artifacts are local runtime evidence under
 `gamespec/.runtime/cross-agent/`. The auxiliary agent cannot read the repository
 or write project truth; Claude packet-only invocation also disables `Task` so it

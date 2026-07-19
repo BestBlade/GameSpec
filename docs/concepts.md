@@ -32,6 +32,30 @@ Spark Divergence records are not canon, not review evidence, and not proof that
 an idea is good. They are traceable creative work that can later feed a Thread
 or Candidate when the user decides the direction deserves commitment.
 
+### Creative Studio
+
+Creative Studio is an optional multi-round support engine for a valuable Spark
+or Thread. It preserves attention and lineage across a sequence such as:
+
+```text
+Expander -> Frame Breaker -> Deepener -> Curator -> human choice
+```
+
+The roles describe creative work, not authorities. Expander widens the pool;
+Frame Breaker attacks hidden premises; Deepener adds playable action, conflict,
+cost, and consequence; Curator preserves a direction/fragment map for a human.
+No role automatically accepts a direction.
+
+GameSpec calls ordinary conversation Explore E0, one-shot divergence Explore
+E1, and a bounded Studio session Explore E2. This Explore-density scale is
+separate from GameSpec's L0/L1/L2/L3 navigation, decision, execution, and
+quality-assurance roles.
+
+Studio runtime evidence can prove which context bytes and runs produced a
+curation map. It cannot prove originality, fun, feasibility, project fit, or
+human acceptance. A curation-ready result remains non-canon until a human uses
+the project's existing workflow to promote a surviving fragment.
+
 ## Project Truth
 
 Project truth is the set of facts future work may trust: vision, pillars, systems, narrative, worldbuilding, levels, reviews, active state, decisions, archives, and implementation handoffs.

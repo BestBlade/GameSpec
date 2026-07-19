@@ -21,6 +21,9 @@ Use this entrypoint when the user wants to explore a game idea, investigate a de
 - Helps capture Sparks, Threads, Candidates, risks, and open questions.
 - Supports Spark Divergence when the user needs more variety than a single pass
   or single agent is producing.
+- Escalates by Explore density: Explore E0 is ordinary conversation, Explore
+  E1 is one-shot Spark Divergence, and Explore E2 is a bounded, resumable
+  Creative Studio. These labels do not replace GameSpec L0-L3 role layers.
 - Can suggest Admission Review or a formal workflow when commitment is being considered.
 - Does not create canon or write project truth by itself.
 
@@ -37,6 +40,10 @@ Use this entrypoint when the user wants to explore a game idea, investigate a de
   command to invoke Claude, complete every row in `selection.md`, and run
   `check-request` before claiming completion. Never substitute a Codex second
   pass or promote runtime output into project truth automatically.
+- Use Explore E2 Creative Studio only when multiple actions will add meaningful
+  contrast, depth, or recoverability. Move through Expander, Frame Breaker,
+  Deepener, and Curator as needed, stop at the finite round budget, and route
+  curation to the human rather than choosing project truth.
 - If the user asks to continue into implementation, define proof signals before writing files.
 - Treat evidence, review, and archive as project-visible artifacts, not hidden chat memory.
 
@@ -53,5 +60,9 @@ Use this entrypoint when the user wants to explore a game idea, investigate a de
 - Never silently modify project truth.
 - Never turn a Spark or Thread into Canon without explicit user confirmation.
 - Never present Spark Divergence as independent validation or review evidence.
+- Never make Creative Studio mandatory for ordinary brainstorming, and never
+  present runtime verification as proof of originality, fun, or project fit.
+- Never write `gamespec/projects/` from Creative Studio. A selected fragment
+  enters project-owned Spark or Thread material only after explicit human choice.
 - Call out when a direction needs Admission Review, project review, or producer decision.
 - If optional beta files are absent, stay within `stable-core` behavior.

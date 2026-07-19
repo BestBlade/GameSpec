@@ -26,11 +26,17 @@ node .\bin\gamespec-check.js --project . --format json
 node .\bin\gamespec-audit-package-readiness.js --format json
 node .\bin\gamespec-audit-cli-smoke.js --format json
 node .\bin\gamespec-audit-core-install-surface.js --format json
+node .\bin\gamespec-audit-cross-agent-hooks.js --json
+node .\bin\gamespec-audit-creative-studio.js --json
 node .\bin\gamespec-audit-pack-install-smoke.js --format json
 git diff --check
 ```
 
 `gamespec-audit-pack-install-smoke` is the strongest package proof. It packs the current source, installs it in an isolated project, checks every bin shim, validates the default stable install, and verifies runtime host selection behavior.
+
+The Creative Studio audit is deterministic runtime proof only. A release review
+must not translate its PASS into a claim that generated directions are original,
+fun, complete, or accepted by a human.
 
 ## Release Posture
 
